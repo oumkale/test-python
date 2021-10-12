@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       e2eTestRepo:
-        default: "litmuschaos/litmus-e2e"
+        default: "oumkale/litmus-e2e"
       e2eTestBranch:
-        default: "master" 
+        default: "test" 
       experimentImage:
         default: "litmuschaos/py-runner:ci"
       operatorImage:
@@ -30,7 +30,7 @@ jobs:
       OPERATOR_IMAGE: "${{ github.event.inputs.operatorImage }}"
       RUNNER_IMAGE: "${{ github.event.inputs.runnerImage }}"
       IMAGE_PULL_POLICY: "${{ github.event.inputs.imagePullPolicy }}"        
-      EXPERIMENT_IMAGE: "${{ github.event.inputs.pythonExperimentImage }}"
+      EXPERIMENT_IMAGE: "${{ github.event.inputs.experimentImage }}"
       CHAOS_NAMESPACE: "${{ github.event.inputs.chaosNamespace }}"
       APP_NS: "${{ github.event.inputs.chaosNamespace }}"
       CHAOS_SERVICE_ACCOUNT: "${{ github.event.inputs.chaosServiceAccount }}"
